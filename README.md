@@ -20,18 +20,29 @@ Works as a Stand-alone App or with [PhoneGap PowerApp Node.js Server](https://gi
 * *Geolocation and Timestamp* - Saved with each item
 * *User Rating* - User rates with star rating and comment, saved with each item
 * *Social Aspect* - If logged in, users can share their item data anonymously and see other's data
-* *Interactive Mapping* - Items (including shared) shown as clickable markers on map (click to see item data)
+* *Interactive Mapping* - Items, including shared items, shown as markers on map (tap marker to see item data)
 
 ### Companion Server
 
 * See [PhoneGap PowerApp Node.js Server](https://github.com/libbybaldwin/phonegap-powerapp-nodejs), however *__log in not required__* to use PowerApp 
 * **App Configuration** required if using server:
-  * *assets/www/index.html* - search for "Simple OpenID Selector", provide server url in form **action**
-  * *assets/www/main.js* - provide server ip and port for var **serverUrl**
+  * **assets/www/index.html** - search for "Simple OpenID Selector", provide server url in form **action**
+  * **assets/www/main.js** - provide server ip and port for var **serverUrl**
 * *Authentication* uses [OpenID](http://openid.net/)
 * *Secure Storage of Data on Server* - Save data on server if user logs in
 * *Secure User ID for Data Store* - Unique user ID from authentication holds user-uploaded data
 * *User-controlled Data Sharing* - Data stored anonymously, sharing controlled by user
+
+### Usage
+
+* Add the Barcode Scanner Plugin Library to Eclipse
+  * Complete **Steps 1** and **6** in the MDS [TMT3 Barcode Scanner Tutorial](http://www.mobiledevelopersolutions.com/home/start/twominutetutorials/tmt3)
+  * **Important** Use the version of the plugin for PhoneGap 1.4.1 as mention in the **Prep** step in the above tutorial
+* Import this PowerApp project into Eclipse
+  * Instructions on installing Eclipse and the AppLaud Eclipse Plugin [here](http://www.mobiledevelopersolutions.com/home/start)
+* Complete **Step 7** in the above tutorial
+  * This steps adds the barcode scanner library to the PowerApp project - errors may appear in the project until this step is completed due to the configuration in AndroidManifest.xml
+  * Note: The PowerApp project *already* includes the Barcode Scanner and Child Browser plugin Java, JavaScript and project configuration
 
 ------
 
