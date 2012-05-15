@@ -1,0 +1,4 @@
+.settings/*
+proguard.cfg
+bin
+gen

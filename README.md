@@ -35,13 +35,13 @@ Works as a Stand-alone App or with [PhoneGap PowerApp Node.js Server](https://gi
 
 ### Usage
 
-* Add the Barcode Scanner Plugin Library to Eclipse
+1. Add the Barcode Scanner Plugin Library to Eclipse
   * Complete **Steps 1** and **6** in the MDS [TMT3 Barcode Scanner Tutorial](http://www.mobiledevelopersolutions.com/home/start/twominutetutorials/tmt3)
   * **Important** Use the version of the plugin for PhoneGap 1.4.1 as mention in the **Prep** step in the above tutorial
-* Import this PowerApp project into Eclipse
+2. Import this PowerApp project into Eclipse
   * Instructions on installing Eclipse and the AppLaud Eclipse Plugin [here](http://www.mobiledevelopersolutions.com/home/start)
-* Complete **Step 7** in the above tutorial
-  * This steps adds the barcode scanner library to the PowerApp project - errors may appear in the project until this step is completed due to the configuration in AndroidManifest.xml
+3. Complete **Step 7** in the above tutorial
+  * This steps "adds" the barcode scanner library to the PowerApp project - errors may appear in the project until this step is completed due to the configuration in AndroidManifest.xml
   * Note: The PowerApp project *already* includes the Barcode Scanner and Child Browser plugin Java, JavaScript and project configuration
 
 ------
