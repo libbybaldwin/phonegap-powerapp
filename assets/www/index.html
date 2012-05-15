@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">  
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>PowerApp</title>
+    
+    <!-- <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.1.0.min.css" type="text/css"/> -->
+    <link rel="stylesheet" href="jquery.mobile/greens3.min.css" />
+    <link rel="stylesheet" href="jquery.mobile/jquery.mobile.structure-1.1.0.min.css" type="text/css"/>
+    <link rel="stylesheet" href="powerapp.custom.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" rel="stylesheet" href="openid/css/openid.css" />
+    
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="jquery.mobile/jquery-1.7.1.min"></script>
+    <script type="text/javascript">
+ 	    $(document).bind("mobileinit", function(){
+            $.mobile.defaultDialogTransition = "none";
+            $.mobile.defaultPageTransition = "none";
+        });
+    </script>
+    <script src="jquery.mobile/jquery.mobile-1.1.0.min.js"></script>
+    <script src="js/jquery.raty.min.js"></script>
+    <style media="all" type="text/css">
+		  .noclear {float:left; clear:none;}
+	  </style>
+    <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
+    <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
+    <script type="text/javascript" charset="utf-8" src="barcodescanner.js"></script>
+    <script type="text/javascript" src="jquery.ui.map.beta/jquery.ui.map.js"></script>
+    <script type="text/javascript" src="jquery.ui.map.beta/jquery.ui.map.services.js"></script>
+    <script type="text/javascript" src="jquery.ui.map.beta/jquery.ui.map.extensions.js"></script>
+  
+    <script type="text/javascript" src="jquery.mobile/jquery.form.js"></script>
+    <script type="text/javascript" src="openid/openid-jquery.js"></script>
+    <script type="text/javascript" src="openid/openid-en.js"></script>
+	  
+	<script type="text/javascript" charset="utf-8" src="main.js"></script>
+	<script type="text/javascript" charset="utf-8" src="item.js"></script>
+	<script type="text/javascript" charset="utf-8" src="menu.js"></script>
+	<script type="text/javascript" charset="utf-8" src="login.js"></script>
+	<script type="text/javascript" charset="utf-8" src="edit.js"></script>
+	<script type="text/javascript" charset="utf-8" src="list.js"></script>
+	<script type="text/javascript" charset="utf-8" src="map.js"></script>
+	<!-- <script type="text/javascript" charset="utf-8" src="accountlist.js"></script> -->
+  </head>
+
+  <body onload="init();">
+
+    <div data-role="page" id="page-item" data-theme="a">
+  	<div data-role="header" data-theme="a">
+    	<h1>PowerApp : <span class="ltgreen">Scan Item</span></h1> 
+		<a href="#dialog-devmenu" data-rel="dialog" data-icon="grid" data-iconpos="notext" class="ui-btn-right" data-theme="a"></a>
+	  </div>
+    <div data-role="content">  
+   
+		<div class="ui-body-a ui-corner-all ui-shadow box-nice hidden" id="new-user">
+      <p class="dkgreen">Welcome New PowerApp User!</p>
+ 			<p class="dkgreen">To save data on the server:</p>         
+			<a href="#page-login" data-role="button" data-theme="a">Go To Login Page</a>
+			After login you will have the option to share data with other users.
+	
+			<p class="dkgreen">To work offline:</p>
+			<a href="#" data-role="button" data-theme="a" id="close-new-user">Skip Login, Start Scanning</a>
+			All data will be saved on device. You will not be able to share data. 
+			
+    	<p>Login and share status can be changed at any time. See the Menu for
+    		more information.</p>
+   	</div>
+    
+   	<div class="hidden" id="scanarea">
+    	<a data-role="button" data-icon="star" data-theme="c" id="scan_btn">Scan Item</a>	  
+    	<div class="scandata">
+				<!-- Successful scan required to save an item.<br/>	 -->	
+				<p>
+				Scan Status: <span id="scanstatus">Not Started</span><br/>
+				Scan: <span class="smalltxt" id="scancode"></span><br/>
+    		Location: <span class="smalltxt" id="itemlocation"></span><br/>
+    		Time: <span class="smalltxt" id="itemtime"></span>
+				</p>
+				<br/>
+				<div id="star" class="noclear"></div>
+				<span id="rating">Not Rated</span>
+				<br/><br/><br/>
+       		<textarea maxlength="64" placeholder="Add comment here" id="comment"></textarea>
+				<br/>
+				<div data-role="controlgroup" data-type="horizontal">
+					<a id="savebtn" data-role="button" data-icon="plus">Save Item</a>
+					<a id="clearfields" data-role="button" data-icon="delete">Discard Item</a>
+				</div>
+		  </div>
+		</div> <!-- /scanarea div -->
+		<span id="new_map_center" class="hidden"></span>		    
+  </div><!-- /content -->	   
+  <div data-role="footer" data-theme="a" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+	  		<li><a href="#page-item">Scan</a></li>
+				<li><a href="#page-list">List</a></li>
+				<li><a href="#page-map">Map</a></li>
+				</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->    
+	</div><!-- /page-item -->
+
+  <div data-role="page" id="page-list" data-theme="a">
+  	<div data-role="header" data-theme="a">
+			<a href="#page-item" data-icon="back" data-iconpos="notext" data-theme="b" data-rel="back"></a>
+    	<h1>PowerApp : <span class="ltgreen">List</span></h1> 
+			<a href="#dialog-devmenu" data-rel="dialog" data-icon="grid" data-iconpos="notext" class="ui-btn-right" data-theme="a"></a>
+		</div>
+
+		<div data-role="content">
+		<div id="instr_list_container" data-role="collapsible" data-theme="b" data-content-theme="a">
+			<h3>Instructions</h3>
+				<span class="dkgreen">Your Item List</span>
+				<li>Tap list item to see it on map page</li>
+				<li>Tap gear icon to edit or delete item</li>
+				<li>Tap marker on map to pop up info window</li>
+				<br/><span class="dkgreen">Shared Item List</span>
+				<li>Refresh shared list to update &#40;must Share to see other&#39;s shared items&#41;
+				<li>Tap shared item to see it on map</li>
+		</div>
+
+		<div id="item_list_container" data-role="collapsible" data-theme="a" data-content-theme="b">
+			<h2><span id="item_cnt" class="dkgreen">0 Items</span> <span id="item_hint" class="grey">Expand to See Your Items</span></h2>
+			<ul id="item_list" data-role="listview" data-inset="true" data-split-icon="gear" data-split-theme="c">
+				<li id="li-placeholder" data-icon="false">
+					<a href="#page-item"><span class="grey" style="line-height:38px;">&#40;Empty &#45; Tap to go to Scan Page&#41;</span></a>
+				</li>
+			</ul>
+		</div>
+
+		<a data-role="button" data-icon="refresh" data-theme="b" id="get_shared_list">Refresh Shared List</a>  
+		<div id="shared_list_container" data-role="collapsible" class="hidden" data-theme="a" data-content-theme="b">
+			<h2><span id="shared_cnt" class="dkgreen"></span> <span id="share_hint" class="grey">Tap to See on Map</span></h2>
+			<ul id="shared_list" data-role="listview" data-inset="true"></ul>
+		</div>	
+		
+		<span id="new_map_center" class="hidden"></span>
+	</div><!-- /content -->		    
+
+  <div data-role="footer" data-theme="a" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#page-item">Scan</a></li>
+				<li><a href="#page-list">List</a></li>
+				<li><a href="#page-map">Map</a></li>
+			</ul>
+	  </div><!-- /navbar -->
+	</div><!-- /footer -->
+	</div><!-- /page-list -->
+ 
+  <div data-role="page" id="page-map" data-theme="a">
+    <div data-role="content" class="map-content">  
+    	<div id="map_canvas"></div>
+	
+		<div id="controls" style="display:none;">
+				<a href="#page-list" data-rel="back" data-icon="back" data-inline="true" data-role="button" class="noclear">Back</a>
+		  <div data-role="controlgroup" data-type="horizontal" data-theme="c" class="noclear ui-shadow">
+				<div id="showminebtn" data-role="button"><img src="img/markers/bimage.png" height="17" width="10"/>&nbsp;&nbsp;Mine</div>
+				<div id="showsharedbtn" data-role="button"><img src="img/markers/gimage.png" height="17" width="10"/>&nbsp;&nbsp;Shared</div>
+			</div>
+			<span id="mapcenter" class="hidden"></span>
+	  </div>		    
+    </div><!-- /content -->	
+	</div><!-- /page-map -->
+
+  <div data-role="page" id="dialog-edit" data-theme="b">
+  	<div data-role="header" data-theme="b">
+    	<h1>PowerApp : <span class="ltgreen">Edit Item</span></h1> 
+	  </div>
+
+    <div data-role="content" data-theme="b">
+		Item: <span class="dkgreen" id="editscancode"></span>
+		<div class="scandata">
+    		<p>Location: <span class="smalltxt" id="edititemlocation"></span><br/>
+    		<span class="smalltxt" id="edititemtime"></span>
+    	</p>
+        </div>
+    	<a data-role="button" id="edit_loc_time">Get New Location and Time</a>
+			<br/>
+			<div id="editstar" class="noclear"></div>
+			<span id="editrating"> Not Rated</span>
+			<br/><br/>				
+        	<textarea maxlength="64" name="editcomment" id="editcomment"></textarea>
+        <br/>	
+        <div data-role="controlgroup" data-type="horizontal">
+					<a href="#page-list" id="edit_delete" data-role="button" data-icon="delete">Delete Item&nbsp;</a>		    
+					<a href="#page-list" id="edit_cancel" data-role="button" data-icon="back">Cancel&nbsp;&nbsp;</a>		    
+				</div>
+			<a href="#page-list" id="edit_save" data-role="button" data-icon="check">Save Changes</a>		    
+    </div><!-- /content -->	
+	</div><!-- /dialog-edit --> 
+
+  <div data-role="page" id="page-login" data-theme="a">
+  	<div data-role="header" data-theme="a">
+    	<h1>Power App : <span class="ltgreen">Log In</span></h1> 
+		  <a href="#dialog-devmenu" data-rel="dialog" data-icon="grid" data-iconpos="notext" class="ui-btn-right" data-theme="a"></a>
+	  </div>    
+		<div data-role="content" data-theme="a">
+			<span class="dkgreen">PowerApp Registration</span>
+	
+			<!-- Simple OpenID Selector -->
+			<!-- <form action="http://yourserver.com/openidAuth" method="get" id="openid_form">  -->
+ 			<form action="http://192.168.0.107:8012/openidAuth" method="get" id="openid_form">
+ 				<input type="hidden" name="action" value="verify" />
+				<p>To register, use your gmail or google account login and password.</p>
+				<fieldset>
+					<div id="openid_choice">
+ 						<p>Tap icon to begin:</p>
+						<div id="openid_btns"></div>
+					</div>
+				</fieldset>
+			</form>
+				<p>After log in, user&#39;s item data is stored on the server.
+					Users can change share settings to share data with other users.</p>
+				<p>See Menu page for more about OpenID Secure Login and share settings.</p>
+				<a href="#dialog-devmenu" data-rel="dialog" data-role="button" data-inline="true">More about PowerApp</a>
+				
+		<span id="new_map_center" class="hidden"></span>
+    </div><!-- /content -->    
+	<div data-role="footer" data-theme="a" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#page-item">Scan</a></li>
+				<li><a href="#page-list">List</a></li>
+				<li><a href="#page-map">Map</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+  </div><!-- /page-login -->
+        
+  <div data-role="page" id="dialog-devmenu" data-theme="b">
+  	<div data-role="header" data-theme="b">
+    	<h1>PowerApp : <span class="ltgreen">Menu</span></h1> 
+		</div>
+  <div data-role="content" data-theme="c">
+    
+		<p>PowerApp User: <br/><span class="username dkgreen">Not Logged In</span><br>
+
+		<div data-role="collapsible" class="allcollapse" id="devmenu-help" data-content-theme="a">
+				<h3>Help with PowerApp</h3>
+				<p>PowerApp demonstrates a few of the powerful capabilities
+				of a PhoneGap App when combined with other open source software.</p>
+				
+				<li><span class="dkgreen">Item Page</span> Scan any barcode to start. Geolocation
+					and a timestamp will be added upon successful scan.  All data is stored locally 
+					with or without login. User adds rating&#47;comment.</li>
+				<li><span class="dkgreen">List Page</span> The list of all scanned items in a
+					collapsible element. Tap on item to see it on the map. Tap the gear icon
+					to edit or delete it.</li>
+				<li><span class="dkgreen">Login</span> After log in the user&#39;s data is stored on the server
+					and may be shared &#40;See Share Settings&#41;.</li>									
+				<li><span class="dkgreen">Shared Item List</span> When you share your items, you can see
+					other PowerApp users shared items. Shared item data does not include user info or timestamp.</li>
+				<li><span class="dkgreen">Map</span> Google Map showing location where items were scanned. 
+					Tap on marker to see item details.</li>								
+		</div>
+		
+    <div data-role="collapsible" class="allcollapse" data-content-theme="a">
+			<h3>Login / Logout</h3>
+			<p>To login go to the Login Page.</p>
+			<p><strong>Important:</strong> You must use your gmail or google account name to log in.</p>
+			<a href="#page-login" data-role="button" class="goto_login" data-theme="a">Go To Login Page</a>
+			<p>Logging out is only necessary if others have access to your device.</p>
+			<div id="logout" data-role="button" data-theme="a">Log out</div>
+			<p>When logged out, your data will be saved locally and is still available after device reboot
+			or app stop/start.</p>
+		</div>    
+
+    <div data-role="collapsible" id="share_set" class="allcollapse" data-content-theme="a">
+			<h3>Share Settings</h3>
+			<p>Currently <span class="dkgreen" id="sharestatus">Not Sharing</span> data.</p>
+			<div id="share_btn" data-role="button">Share</div>
+			<p>You must login and have network connection to share.
+				Unshare at any time, even when logged in.</p>
+			<p><span class="dkgreen">Share</span> Other users see your item data, but
+			<strong>not your user name or email.</strong></p>
+			<p><span class="dkgreen">UnShare</span> All your items are unshared, no other users can see them.</p>
+		</div>    
+
+    <div data-role="collapsible" class="allcollapse" data-content-theme="a">
+			<h3>Navigation / Home Page</h3>		
+			
+			<!-- <b>Swipe to change pages:</b><br/>
+			<span id="dkgreen"> Item Page &gt; List Page &gt; Map</span><br/><br/> -->
+			        
+			<b>Menu Button</b> &#47; <b>Grid Icon:</b><br/> This Menu Dialog<br/>
+
+			<p><b>Home Page:</b> Default on launch</p>
+
+			<label for="select-home-page" class="select">Set Home Page:</label>
+			<select name="select-home-page" id="select-home-page">
+				<option value="page-item">Scan Item</option>
+				<option value="page-list">Item List</option>
+				<option value="page-map">Map</option>
+			</select>
+			<hr>
+			<div data-role="button" id="go_to_homepage" data-theme="a">Go to Homepage</div>
+			<br/>
+		</div>
+
+  	<!-- <div data-role="collapsible" class="allcollapse" data-content-theme="a">
+			<h3>Local Data</h3>
+			<p>Clear all locally stored data.</p>
+			<p><strong>Note:</strong> For development only.</p>
+			<div data-role="button" id="clear_dev_data" data-theme="a">Clear All Data</div>
+		</div> -->	
+
+    <div data-role="collapsible" class="allcollapse" data-content-theme="a">
+			<h3>About OpenID</h3>
+			<p>OpenID is a service that allows you to log-on to many different websites using a single identity.</p>
+			<p>Neither PowerApp nor the server see your password during authentication.</p>
+			<p>Find out <a href="http://openid.net/what/">more about OpenID</a> and <a href="http://openid.net/get/">how to get an OpenID enabled account</a>.</p>
+		</div>
+	
+		<div data-role="collapsible" class="allcollapse" data-content-theme="a">
+			<h3>About PowerApp</h3>
+
+			<p style="margin-top:0.4em;margin-bottom:0em;"> This app was created by <a href="http://twitter.com/#!/libbybaldwin">Libby Baldwin</a>
+				of <span style="color:#008595;"><a href="http://www.mobiledevelopersolutions.com/">Mobile Developer Solutions</a></span>.</p>
+			<ul style="line-height:1.4em;margin-bottom:0.3em;margin-top:0.2em;">
+				<li><a href="http://www.phonegap.com/">PhoneGap</a></li>
+				<li><a href="http://www.jquerymobile.com/">jQuery Mobile Frameworks</a></li>
+			</ul>	
+		</div>
+		<a href="#" data-role="button" data-inline="true" data-rel="back">Close&nbsp;</a>
+	</div><!-- /content -->
+	</div><!-- /dialog-devmenu --> 
+  </body>
+</html>

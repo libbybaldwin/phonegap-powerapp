@@ -1,0 +1,70 @@
+/*
+	Simple OpenID Plugin
+	http://code.google.com/p/openid-selector/
+	
+	This code is licensed under the New BSD License.
+*/
+
+/* MDS need to fix these!! */
+/* #openid_form { wraps better w/o this */
+/* 	width: 380px; */
+/* } */
+
+/* #openid_form legend { */
+/* 	font-weight: bold; */
+/* } */
+
+/* #openid_choice {  always showing now */
+/* 	display: none; */
+/* } */
+
+#openid_input_area {
+	clear: both;
+	padding: 10px; /* changed from 10 to 20 MDS */
+}
+
+#openid_btns, #openid_btns br {
+	clear: both;
+}
+
+#openid_highlight {
+	/* padding: 1px;  was 2px */
+	background-color: #efaa2e;
+	float: left;
+}
+
+.openid_large_btn {
+	width: 100px;
+	height: 60px;
+/* fix for IE 6 only: http://en.wikipedia.org/wiki/CSS_filter#Underscore_hack */
+/* 	_width: 102px; */
+/* 	_height: 62px; */
+
+	border: 2px solid #aaa;
+	margin: 5px; /* was 3 MDS */
+	float: left;
+}
+
+.openid_small_btn {
+	width: 24px;
+	height: 24px;
+/* fix for IE 6 only: http://en.wikipedia.org/wiki/CSS_filter#Underscore_hack */
+/* 	_width: 26px; */
+/* 	_height: 26px; */
+
+	border: 1px solid #aaa;
+	margin: 3px;
+	float: left;
+}
+
+a.openid_large_btn:focus {
+	outline: none;
+}
+
+a.openid_large_btn:focus {
+	-moz-outline-style: none;
+}
+
+.openid_selected {
+	border: 4px solid #DDD;
+}

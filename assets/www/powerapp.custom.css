@@ -1,0 +1,69 @@
+/* Some tablets mis-report orientation, leaving white at bottom: */
+/* body { background-color: #85c1bc;} 
+ */
+body { font-size: .95em; }
+.ltgreen {color:#aee3cc; font-weight: bold; }
+.dkgreen {color:#194e37; font-weight: bold; }
+
+/* listview items: height shorter, text area wider !imporant: keep this order */
+.ui-btn-inner {padding-right:10px; padding-left:10px; padding-top: .55em; padding-bottom: .55em;}
+.ui-li .ui-btn-inner a.ui-link-inherit { padding: .1em 15px .1em 10px; }
+
+.ui-header .ui-title {margin-right:20px;margin-left:20px;}
+
+ .ui-footer .ui-title {
+	margin-right:20px;
+	margin-left:20px;
+	white-space:normal;
+ }
+
+.ui-field-contain {
+	margin: .4em 0;	
+	padding: .4em 0;
+}
+
+/*  JQM: .ui-content { padding: 15px; }
+ *  Leave more space vertically for buttons etc */
+.ui-content { padding: .4em 11px;}
+
+.ui-collapsible-content { padding: 5px 5px 5px 6px; }
+
+.ui-content .ui-listview-inset { margin-bottom: 0px;}
+
+.hidden {display:none;}
+.grey {color:#999; font-size: 1em; text-shadow: none; }
+.smalltxt { font-size: .9em; font-weight: bold; }
+.errortxt { color: red; }
+.successtxt { color: green; }
+.box-nice { padding: 0 0.6em; margin: 0.4em 0.6em; }
+.scandata p { line-height: 1.8em; padding: .2em; border: 3px outset #178e52;
+	background-color: #dee7e3; font-size: .85em ; text-shadow: none; }
+
+#page-map, .map-content, #map_canvas { width: 100%; height: 100%; padding: 0; }
+#map_canvas { height: min-height: 100%; }
+#controls { margin-bottom: 2em;}
+#controls span.ui-btn-inner span.ui-btn-text { padding: 1.6em .1em; font-size: 13px; color:#194e37; }
+#controls a {margin-top: 0.1em;}
+
+#fading_msg { 
+	padding: .6em; text-shadow: none; text-align: center; margin: 90px auto;
+  border: 0; max-width: 260px; min-width: 110px; box-shadow: 5px 5px 3px #555; 
+}
+
+#item_list, #shared_list { margin-top:0px; margin-bottom: -6px;}
+#item_list_container, #shared_list_container {
+	margin: .9em 8px;
+	padding-left: 0px;
+	padding-right: 4px;
+}
+
+#instr_list_container {
+	margin: .9em 8px;
+	padding-left: 2px;
+	padding-right: 4px;
+}
+
+#item_list_container .ui-collapsible-content,
+#shared_list_container .ui-collapsible-content {  padding: 0px; }
+#item_list_container .ui-collapsible-heading,
+#shared_list_container .ui-collapsible-heading { font-size: 14px; line-height: 25px;}
