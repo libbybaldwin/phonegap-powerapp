@@ -9,7 +9,7 @@ Works as a Stand-alone App or with [PhoneGap PowerApp Node.js Server](https://gi
 * **jQuery Mobile** - [jquerymobile.com](jquerymobile.com)
 * **Maps** - Google Maps [JavaScript API v3](https://developers.google.com/maps/documentation/javascript/reference)
 * **PhoneGap Plugins** - ChildBrowser, Barcode Scanner - from [PhoneGap 1.4.1 Plugin Repo](https://github.com/libbybaldwin/phonegap-plugins)
-* **jQuery Plugins** - [jQuery Google Maps Plugin](http://code.google.com/p/jquery-ui-map/) : **Version [3.0-beta]**(http://code.google.com/p/jquery-ui-map/downloads/list),
+* **jQuery Plugins** - [jQuery Google Maps Plugin](http://code.google.com/p/jquery-ui-map/) : **Version [3.0-beta](http://code.google.com/p/jquery-ui-map/downloads/list)**,
 [jQuery Star Raty](http://wbotelhos.com/raty/), [jQuery Form Plugin](http://jquery.malsup.com/form/)
 * **OpenID Client** - [JavaScript OpenID Selector](http://code.google.com/p/openid-selector/)
 
