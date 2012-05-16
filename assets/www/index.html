@@ -116,8 +116,12 @@
 				<span class="dkgreen">Your Item List</span>
 				<li>Tap list item to see it on map page</li>
 				<li>Tap gear icon to edit or delete item</li>
-				<li>Tap marker on map to pop up info window</li>
-				<br/><span class="dkgreen">Shared Item List</span>
+				<li>Tap marker on map to pop up info window for that item</li>
+				<ul>
+					<li><img src="img/markers/bimage.png" height="17" width="10"/>&nbsp;&nbsp;Your Items</li>
+					<li><img src="img/markers/gimage.png" height="17" width="10"/>&nbsp;&nbsp;Shared Items</li>
+				</ul>
+				<span class="dkgreen">Shared Item List</span>
 				<li>Refresh shared list to update &#40;must Share to see other&#39;s shared items&#41;
 				<li>Tap shared item to see it on map</li>
 		</div>
@@ -203,7 +207,8 @@
 	
 			<!-- Simple OpenID Selector -->
 			<!-- <form action="http://yourserver.com/openidAuth" method="get" id="openid_form">  -->
- 			<form action="http://192.168.0.107:8012/openidAuth" method="get" id="openid_form">
+ 			<!-- <form action="http://192.168.0.107:8012/openidAuth" method="get" id="openid_form"> -->
+ 			<form action="http://10.254.3.113:8012/openidAuth" method="get" id="openid_form">
  				<input type="hidden" name="action" value="verify" />
 				<p>To register, use your gmail or google account login and password.</p>
 				<fieldset>
