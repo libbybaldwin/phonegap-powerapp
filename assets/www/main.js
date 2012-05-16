@@ -18,7 +18,8 @@
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //    THE SOFTWARE.
 
-var serverUrl = 'http://192.168.0.107:8012';
+//var serverUrl = 'http://192.168.0.107:8012';
+var serverUrl = 'http://10.254.3.113:8012';
 
 var powerapp = {};
 powerapp.networkState = -1;
@@ -179,6 +180,7 @@ function go() {
                 // Remove saved openid provider from locstore and $('span#useropenid').html();
                 $('#new-user').remove();
                 $('div#scanarea').removeClass('hidden');
+                $('div[id="page-item"] > div[data-role="footer"]').removeClass('hidden');
                 $.mobile.changePage($("#page-item"));
              } else {
                 // The other loc changes are part of openid.. so ignore them

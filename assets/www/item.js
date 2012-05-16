@@ -113,11 +113,13 @@ $('#page-item').live('pageinit', function(event){
             }
         });
         $('div#scanarea').removeClass('hidden');
+        $('div[id="page-item"] > div[data-role="footer"]').removeClass('hidden');
     } else if (!locStoreEmail) { // !== 'Guest') 
         // This is the first time the app has run on this device
         $('div#new-user').removeClass('hidden');       
     } else { 
         $('div#scanarea').removeClass('hidden');
+        $('div[id="page-item"] > div[data-role="footer"]').removeClass('hidden');
         $('div#new-user').remove();
     }
 
@@ -161,6 +163,7 @@ $('#page-item').live('pageinit', function(event){
     $('#close-new-user').live('click', function() {
         $('div#new-user').remove();
         $('div#scanarea').removeClass('hidden');
+        $('div[id="page-item"] > div[data-role="footer"]').removeClass('hidden');
         localStorage.powerapp_email = "Guest";
         setUser("Not Logged In");
     });
