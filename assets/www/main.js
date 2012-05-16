@@ -24,7 +24,6 @@ var powerapp = {};
 powerapp.networkState = -1;
 powerapp.logoutTime = null;
 
-
 function showMenu() {
     $.mobile.changePage($('#dialog-devmenu'), { role: 'dialog' });
 }
@@ -112,6 +111,7 @@ function go() {
                         
                         $('#new-user').remove();
                         $('div#scanarea').removeClass('hidden');
+                        $('div[id="page-item"] > div[data-role="footer"]').removeClass('hidden');
                         
                         // Maybe check if exists prevPage and go there
                         $.mobile.changePage($("#page-item"));
@@ -167,6 +167,8 @@ function go() {
                         // Show alert about unsuccessful login
                         $('#new-user').remove();
                         $('div#scanarea').removeClass('hidden');
+                        $('div[id="page-item"] > div[data-role="footer"]').removeClass('hidden');
+                        $.mobile.changePage($("#page-item"));
                     }
                 });
            
@@ -178,9 +180,8 @@ function go() {
                 $('#new-user').remove();
                 $('div#scanarea').removeClass('hidden');
                 $.mobile.changePage($("#page-item"));
-             //} else {
-                // The other loc changes are part of openid.. so ignore
-                // console.log("PowerApp: Changed to unknown location.")
+             } else {
+                // The other loc changes are part of openid.. so ignore them
                 // console.log("PowerApp: " + loc);
             }
         };
