@@ -47,7 +47,9 @@ $('#page-login').live('pageinit', function(event){
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log("PowerApp: openid_form ajax error: " + textStatus + " : " + errorThrown);
-            alert("openid_form ajax error: " + textStatus + " : " + errorThrown);
+            // If errorThrown === "" and textStatus === error
+            // suggest checking Form action
+            alert("OpenID Ajax Form error: " + textStatus + " : " + errorThrown);
             $('#fading_msg').remove();
         }
     });    
