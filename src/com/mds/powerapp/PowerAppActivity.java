@@ -1,6 +1,6 @@
 package com.mds.powerapp;
 
-import com.phonegap.*;
+import org.apache.cordova.DroidGap;
 import android.os.Bundle;
 
 public class PowerAppActivity extends DroidGap {
