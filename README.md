@@ -5,10 +5,10 @@ Works as a Stand-alone App or with [PhoneGap PowerApp Node.js Server](https://gi
 
 ### The App Includes:
 
-* **PhoneGap** - [phonegap.com](phonegap.com) - currently using **PhoneGap 1.4.1** and corresponding PhoneGap Plugins
+* **PhoneGap** - [phonegap.com](phonegap.com) - currently using **PhoneGap/Cordova 1.8.0** and corresponding PhoneGap Plugins
 * **jQuery Mobile** - [jquerymobile.com](jquerymobile.com)
 * **Maps** - Google Maps [JavaScript API v3](https://developers.google.com/maps/documentation/javascript/reference)
-* **PhoneGap Plugins** - ChildBrowser, Barcode Scanner - from [PhoneGap 1.4.1 Plugin Repo](https://github.com/libbybaldwin/phonegap-plugins)
+* **PhoneGap Plugins** - ChildBrowser, Barcode Scanner - from latest [PhoneGap/Cordova Plugin Repo](https://github.com/phonegap/phonegap-plugins)
 * **jQuery Plugins** - [jQuery Google Maps Plugin](http://code.google.com/p/jquery-ui-map/) : **Version [3.0-beta](http://code.google.com/p/jquery-ui-map/downloads/list)**,
 [jQuery Star Raty](http://wbotelhos.com/raty/), [jQuery Form Plugin](http://jquery.malsup.com/form/)
 * **OpenID Client** - [JavaScript OpenID Selector](http://code.google.com/p/openid-selector/)
@@ -22,7 +22,7 @@ Works as a Stand-alone App or with [PhoneGap PowerApp Node.js Server](https://gi
 * *Social Aspect* - If logged in, users can share their item data anonymously and see other's data
 * *Interactive Mapping* - Items, including shared items, shown as markers on map (tap marker to see item data)
 
-### Companion Server
+### Companion Node.js Server
 
 * See [PhoneGap PowerApp Node.js Server](https://github.com/libbybaldwin/phonegap-powerapp-nodejs), however *__log in not required__* to use PowerApp 
 * **App Configuration** required if using server:
@@ -34,7 +34,7 @@ Works as a Stand-alone App or with [PhoneGap PowerApp Node.js Server](https://gi
 
 ### Usage
 
-Instructions on installing Eclipse, Android SDK and the AppLaud Eclipse Plugin found [here](http://www.mobiledevelopersolutions.com/home/start).
+Instructions on installing Eclipse, Android SDK and the AppLaud Eclipse Plugin found [here](http://www.mobiledevelopersolutions.com/home/start). Recommend creating and running at least on demo app before using PowerApp, see [Getting Started Tutorial](http://www.mobiledevelopersolutions.com/home/start/twominutetutorials/tmt0).
 
 1. Add the Barcode Scanner Plugin Project to Eclipse
   * Complete **Steps 1** and **6** in the MDS [TMT3 Barcode Scanner Tutorial](http://www.mobiledevelopersolutions.com/home/start/twominutetutorials/tmt3)
