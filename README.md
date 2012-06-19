@@ -38,7 +38,7 @@ Instructions on installing Eclipse, Android SDK and the AppLaud Eclipse Plugin f
 
 1. Add the Barcode Scanner Plugin Project to Eclipse
   * Complete **Steps 1** and **6** in the MDS [TMT3 Barcode Scanner Tutorial](http://www.mobiledevelopersolutions.com/home/start/twominutetutorials/tmt3)
-  * **Important** Use the version of the plugin for PhoneGap 1.4.1 as mention in the **Prep** step in the above tutorial
+  * **Important** Use the version of the Barcode Scanner plugin for **Cordova 1.5.0+** as mention in the **Prep** step in the above tutorial. *Do not* use the version for **PhoneGap 1.4.1**.
   * The resulting project will be an **Android Library**
 2. "Import...  Existing Projects Into Workspace" in Eclipse to create project. This project may initially have errors!
   * Set "Java Build Path" to your Android jar location
