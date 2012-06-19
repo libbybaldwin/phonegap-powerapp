@@ -92,11 +92,11 @@ $('#page-map').live("pageshow", function() {
         scancode = id.slice(id.indexOf("x") + 1);
         //console.log("found shared li id=" + id + " scancode=" + scancode);
         
-        comment = $('a#' + id + ' p span#comment' + scancode).text();                
-        location = $('a#' + id + ' p span#loc' + scancode).text();
+        comment = $('a#' + id + ' p span#comment').text();                
+        location = $('a#' + id + ' p span#loc').text();
         comment = (comment !== "") ? comment : "(no comment)";
         info = "Shared Item: <strong>" + scancode + "</strong><br/>" + 
-            $('a#' + id + ' p span#rating' + scancode).text() + "<br/>" + comment;
+            $('a#' + id + ' p span#rating').text() + "<br/>" + comment;
         $('#map_canvas').gmap('addMarker', { 'tags':'allShared', 
             'position': location, 'icon': gimage, 
             'shadow' : shadow, 'shape' : shadowShape, 'bounds': true })
@@ -111,13 +111,13 @@ $('#page-map').live("pageshow", function() {
     $('ul#item_list li[id!="li-placeholder"]').each(function(i) {
        var info; // needed HERE for each invocation
        id = $(this).attr('id');
-       scancode = id.slice(id.indexOf("x") + 1);
+       scancode = id.slice(id.indexOf("item") + 1);
        //console.log("found li id=" + id + " scancode=" + scancode); 
        
-       comment = $('a#' + id + ' p span#comment' + scancode).text();                
-       location = $('a#' + id + ' p span#loc' + scancode).text();
+       comment = $('a#' + id + ' p span#comment').text();                
+       location = $('a#' + id + ' p span#loc').text();
        comment = (comment !== "") ? comment : "(no comment)";
-       info = "Item: <strong>" + scancode + "</strong><br/>" + $('a#' + id + ' p span#rating' + scancode).text()
+       info = "Item: <strong>" + scancode + "</strong><br/>" + $('a#' + id + ' p span#rating').text()
            + "<br/>" + comment; 
        $('#map_canvas').gmap('addMarker', { 'tags': 'all', 
            'position': location, 'icon': bimage, 

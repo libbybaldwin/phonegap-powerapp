@@ -24,13 +24,16 @@
     <style media="all" type="text/css">
 		  .noclear {float:left; clear:none;}
 	  </style>
-    <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova-1.8.0.js"></script>
     <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
     <script type="text/javascript" charset="utf-8" src="barcodescanner.js"></script>
-    <script type="text/javascript" src="jquery.ui.map.beta/jquery.ui.map.js"></script>
-    <script type="text/javascript" src="jquery.ui.map.beta/jquery.ui.map.services.js"></script>
+    <!-- <script type="text/javascript" src="jump-map-plugin/jump.js"></script>
+    <script type="text/javascript" src="jump-map-plugin/services/jump.services.js"></script>
+    <script type="text/javascript" src="jump-map-plugin/extensions/jump.extensions.js"></script> -->
+	<script type="text/javascript" src="jquery.ui.map.beta/jquery.ui.map.js"></script>
     <script type="text/javascript" src="jquery.ui.map.beta/jquery.ui.map.extensions.js"></script>
-  
+    <script type="text/javascript" src="jquery.ui.map.beta/jquery.ui.map.services.js"></script>
+      
     <script type="text/javascript" src="jquery.mobile/jquery.form.js"></script>
     <script type="text/javascript" src="openid/openid-jquery.js"></script>
     <script type="text/javascript" src="openid/openid-en.js"></script>
@@ -74,15 +77,15 @@
 				<!-- Successful scan required to save an item.<br/>	 -->	
 				<p>
 				Scan Status: <span id="scanstatus">Not Started</span><br/>
-				Scan: <span class="smalltxt" id="scancode"></span><br/>
+				Scan: <span class="smalltxt" id="itemscancode"></span><br/>
     		Location: <span class="smalltxt" id="itemlocation"></span><br/>
     		Time: <span class="smalltxt" id="itemtime"></span>
 				</p>
 				<br/>
 				<div id="star" class="noclear"></div>
-				<span id="rating">Not Rated</span>
+				<span id="itemrating">Not Rated</span>
 				<br/><br/><br/>
-       		<textarea maxlength="64" placeholder="Add comment here" id="comment"></textarea>
+       		<textarea maxlength="64" placeholder="Add comment here" id="itemcomment"></textarea>
 				<br/>
 				<div data-role="controlgroup" data-type="horizontal">
 					<a id="savebtn" data-role="button" data-icon="plus">Save Item</a>
@@ -207,8 +210,7 @@
 	
 			<!-- Simple OpenID Selector -->
 			<!-- <form action="http://yourserver.com/openidAuth" method="get" id="openid_form">  -->
- 			<!-- <form action="http://192.168.0.107:8012/openidAuth" method="get" id="openid_form"> -->
- 			<form action="http://10.254.3.113:8012/openidAuth" method="get" id="openid_form">
+ 			<form action="http://192.168.0.107:8012/openidAuth" method="get" id="openid_form">
  				<input type="hidden" name="action" value="verify" />
 				<p>To register, use your gmail or google account login and password.</p>
 				<fieldset>

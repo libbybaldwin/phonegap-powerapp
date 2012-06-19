@@ -50,12 +50,12 @@ $('#page-item').live('pageinit', function(event){
        
     var saveItemToList = function(item) {
         var scancode = item.scancode; 
-        $('<li id="itemx' + scancode + '"><a class="showmap" id="itemx' + scancode + '" href="#page-map"><h4>' 
+        $('<li id="item' + scancode + '"><a class="showmap" id="item' + scancode + '" href="#page-map"><h4>' 
                 + scancode 
-                + '</h4><p><span id="loc' + scancode + '">' + item.loc + '</span><br/>' 
-                + '<span id="time' + scancode + '">' + item.time + '</span><br/>' 
-                + '<span id="rating' + scancode + '">' + item.rating + '</span><br/>'
-                + '<span id="comment' + scancode + '">' + item.comment  
+                + '</h4><p><span id="loc">' + item.loc + '</span><br/>' 
+                + '<span id="time">' + item.time + '</span><br/>' 
+                + '<span id="rating">' + item.rating + '</span><br/>'
+                + '<span id="comment">' + item.comment  
                 + '</span></p></a>'
                 + '<a class="showedit" id="edit' + scancode + '">Edit</a></li>').appendTo('ul#item_list');
         // Could also scroll to new item
@@ -153,9 +153,9 @@ $('#page-item').live('pageinit', function(event){
         starOn:    'star-on-big.png',
         click: function(score, evt) {
             if (score !== null) {
-                $('#rating').text(" " + score + " star" + ((score > 1) ? "s" : ""));
+                $('#itemrating').text(" " + score + " star" + ((score > 1) ? "s" : ""));
             } else {
-                $('#rating').text("Not Rated");
+                $('#itemrating').text("Not Rated");
             }
         }
       });
@@ -208,7 +208,7 @@ $('#page-item').live('pageinit', function(event){
                 //fadingMsg("Scan successful. Getting location and time..");
                 scannedItemsList.push(result.text);
                 
-                $('#scancode').text(result.text);
+                $('#itemscancode').text(result.text);
                 $('#scanstatus').addClass('successtxt').removeClass('errortxt').html('Success');
                 
                 var options = { enableHighAccuracy: true, timeout: 8000 };
@@ -257,11 +257,11 @@ $('#page-item').live('pageinit', function(event){
         
     $('#savebtn').live('click', function() {
         var item = {}, scancode;
-        item.scancode = scancode = $('#scancode').text();
+        item.scancode = scancode = $('#itemscancode').text();
         item.loc = $('#itemlocation').text();
         item.time = $('#itemtime').text();
-        item.comment = $('#comment').val();
-        item.rating = $('#rating').text();
+        item.comment = $('#itemcomment').val();
+        item.rating = $('#itemrating').text();
                 
         $('#new_map_center').text(item.loc);
         // Put item info in ul#item_list on page-list
@@ -278,13 +278,13 @@ $('#page-item').live('pageinit', function(event){
     });
  
     $('#clearfields').live('click', function() {
-        $('#scancode').text("");
+        $('#itemscancode').text("");
         $('#scanstatus').removeClass('errortxt').removeClass('successtxt').html("Not Started");        
         $('#itemlocation').text("");
         $('#itemtime').text("");
         $('#star').raty("cancel");
-        $('#rating').text("Not Rated");
-        $('#comment').val("");
+        $('#itemrating').text("Not Rated");
+        $('#itemcomment').val("");
         $('#savebtn').addClass('ui-disabled');
     });
 
@@ -292,7 +292,7 @@ $('#page-item').live('pageinit', function(event){
 });
 
 $('#page-item').live('pageshow', function(event){
-    $('#comment').css('height', '3.5em').css('width', '90%');
+    $('#itemcomment').css('height', '3.5em').css('width', '90%');
     $("div ul li a[href='#page-item']").addClass('ui-btn-active');
     $("div ul li a[href!='#page-item']").removeClass('ui-btn-active');
     $("div ul li a[href='#page-map']").removeClass('ui-btn-active');

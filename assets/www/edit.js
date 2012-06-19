@@ -107,11 +107,11 @@ $('#dialog-edit').live('pageinit', function(){
        item.rating = $('#editrating').text();
        item.comment = $('#editcomment').val();
 
-       $('a#itemx' + scancode).html('<h4>' + scancode 
-               + '</h4><p><span id="loc' + scancode + '">' + item.loc + '</span><br/>' 
-               + '<span id="time' + scancode + '">' + item.time + '</span><br/>' 
-               + '<span id="rating' + scancode + '">' + item.rating + '</span><br/>'
-               + '<span id="comment' + scancode + '">' + item.comment  
+       $('a#item' + scancode).html('<h4>' + scancode 
+               + '</h4><p><span id="loc">' + item.loc + '</span><br/>' 
+               + '<span id="time">' + item.time + '</span><br/>' 
+               + '<span id="rating">' + item.rating + '</span><br/>'
+               + '<span id="comment">' + item.comment  
                + '</span></p>');
        try {
            $("ul#item_list").listview('refresh');
@@ -129,7 +129,7 @@ $('#dialog-edit').live('pageinit', function(){
    $('#edit_delete').live('click', function() {
        var scancode = $('#editscancode').text();
        scannedItemsList.splice($.inArray(scancode, scannedItemsList), 1);
-       $('li#itemx' + scancode).remove();
+       $('li#item' + scancode).remove();
        //alert("list length: " + $('ul#item_list').find('li').length);
        if ($('ul#item_list').find('li').length === 1) {
            $('#li-placeholder').css('display', 'block');

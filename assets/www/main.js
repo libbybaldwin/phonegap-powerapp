@@ -18,8 +18,7 @@
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //    THE SOFTWARE.
 
-//var serverUrl = 'http://192.168.0.107:8012';
-var serverUrl = 'http://10.254.3.113:8012';
+var serverUrl = 'http://192.168.0.107:8012';
 
 var powerapp = {};
 powerapp.networkState = -1;
@@ -129,9 +128,9 @@ function go() {
                         $('ul#item_list li[id!="li-placeholder"]').each(function(i) {
                             var id, scancode, item = {}, itemdate; 
                             id = $(this).attr('id');
-                            scancode = id.slice(id.indexOf("x") + 1);
+                            scancode = id.slice(id.indexOf("item") + 1);
                             
-                            itemdate = new Date($('a#' + id + ' p span#time' + scancode).text());
+                            itemdate = new Date($('a#' + id + ' p span#time').text());
                             
                             if (itemdate.getTime() > powerapp.logoutTime) {                                                                                      
                                 navigator.notification.alert("Unsaved Item:\n" + scancode + "\nsaved on server.",
@@ -139,10 +138,10 @@ function go() {
                                     'PowerApp Login Success',           
                                     'Close');
                                 item.scancode = scancode;
-                                item.loc = $('a#' + id + ' p span#loc' + scancode).text();
-                                item.time = $('a#' + id + ' p span#time' + scancode).text();
-                                item.comment = $('a#' + id + ' p span#comment' + scancode).text();
-                                item.rating = $('a#' + id + ' p span#rating' + scancode).text();
+                                item.loc = $('a#' + id + ' p span#loc').text();
+                                item.time = $('a#' + id + ' p span#time').text();
+                                item.comment = $('a#' + id + ' p span#comment').text();
+                                item.rating = $('a#' + id + ' p span#rating').text();
                                 saveItemRemote(item);  
                             }
                             noItems = false;

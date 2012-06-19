@@ -61,11 +61,11 @@ $('#page-list').live('pageinit', function(event){
     $('.showmap').live("click", function () {
         var id = $(this).attr('id');
         //var scancode = id.replace(/[^\d.]/g, ""); //remove 'item' or 'shared' prefix
-        var scancode = id.slice(id.indexOf("x") + 1);
+        var scancode = id.slice(id.indexOf("item") + 1);
         var type = id.replace(/[0-9]/g, ""); //remove numbers
         var location, tagType, currentLatAndLang = []; 
         
-        location = $('a#' + id + ' p span#loc' + scancode).text();
+        location = $('a#' + id + ' p span#loc').text();
         currentLatAndLang = location.split(',', 2);
         
         console.log("currentLatAndLang:" + currentLatAndLang[0] + "," + currentLatAndLang[1]);
@@ -76,15 +76,15 @@ $('#page-list').live('pageinit', function(event){
     $('.showedit').live("click", function () {
         var id = $(this).attr('id');
         var scancode = id.replace(/[^\d.]/g, "");
-        id = id.replace(/edit/g, "itemx");
+        id = id.replace(/edit/g, "item");
                 
         $('#editscancode').text(scancode);
-        $('#edititemlocation').text($('a#' + id + ' p span#loc' + scancode).text());
-        $('#edititemtime').text($('a#' + id + ' p span#time' + scancode).text());
-        var ratetext = $('a#' + id + ' p span#rating' + scancode).text();
+        $('#edititemlocation').text($('a#' + id + ' p span#loc').text());
+        $('#edititemtime').text($('a#' + id + ' p span#time').text());
+        var ratetext = $('a#' + id + ' p span#rating').text();
         $('#editstar').raty('click', (ratetext.replace(/[^\d.]/g, "")));
-        $('#editrating').text($('a#' + id + ' p span#rating' + scancode).text());
-        $('#editcomment').val($('a#' + id + ' p span#comment' + scancode).text());        
+        $('#editrating').text($('a#' + id + ' p span#rating').text());
+        $('#editcomment').val($('a#' + id + ' p span#comment').text());        
         $.mobile.changePage($('#dialog-edit'), {role: 'dialog'});
     });
        
@@ -118,13 +118,13 @@ $('#page-list').live('pageinit', function(event){
         for(i = 0 ; i < list.length; i++) {
             // make list[i].item unique by adding i to it when used as id
             id = (i + "x").concat(list[i].item);
-            //console.log("id=" + id);
+            //console.log("buildSharedList id=" + id);
             $('<li><a href="#page-map" id="shared' + id + '" class="showmap"><h4>' 
                     + list[i].item
-                    + '</h4><p><span id="loc' + list[i].item  + '">' + list[i].loc + '</span><br/>' 
-                    //+ '<span id="time' + list[i].item  + '">' + list[i].time + '</span><br/>' 
-                    + '<span id="rating' + list[i].item  + '">' + list[i].rating + '</span><br/>'
-                    + '<span id="comment' + list[i].item  + '">' + list[i].comment  
+                    + '</h4><p><span id="loc">' + list[i].loc + '</span><br/>' 
+                    //+ '<span id="time">' + list[i].time + '</span><br/>' 
+                    + '<span id="rating">' + list[i].rating + '</span><br/>'
+                    + '<span id="comment">' + list[i].comment  
                     + '</span></p></a></li>').appendTo('ul#shared_list');
         }
         $('span#shared_cnt').html(i + " Shared Item" + ((i>1)? "s" : ""));

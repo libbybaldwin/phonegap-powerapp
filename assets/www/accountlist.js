@@ -8,6 +8,6 @@ AccountList.prototype.get = function(params, success, fail) {
 	}, 'AccountList', '', [params]);
 };
 
-PhoneGap.addConstructor(function() {
-	PhoneGap.addPlugin('AccountList', new AccountList());
+cordova.addConstructor(function() {
+	cordova.addPlugin('AccountList', new AccountList());
 });
