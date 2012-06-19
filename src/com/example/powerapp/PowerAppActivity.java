@@ -1,4 +1,4 @@
-package com.mds.powerapp;
+package com.example.powerapp;
 
 import org.apache.cordova.DroidGap;
 import android.os.Bundle;
