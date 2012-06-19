@@ -43,13 +43,12 @@ Instructions on installing Eclipse, Android SDK and the AppLaud Eclipse Plugin f
   * The resulting project will be an **Android Library**
 2. Download and unzip PowerApp from this page. Alternate: [Fork it](https://help.github.com/articles/fork-a-repo).
   * Run "File > Import...  Existing Projects Into Workspace" in Eclipse to create the PowerApp project
-  * For "Selet Root Directory" browse to the location of the unzipped PowerApp project and click *Finish*
+  * For "Select Root Directory" browse to the location of the unzipped PowerApp project and click *Finish*
   * *This project may have errors until you complete all steps!*
-  * Set "Java Build Path" to your Android jar location
-  * See the next step to include the Barcode Scanner Library in PowerApp project
-3. Complete **Step 7** in the above tutorial
-  * This steps "adds" the barcode scanner library to the PowerApp project - errors may appear in the project until this step is completed due to the configuration in AndroidManifest.xml
-  * Note: The PowerApp project *already* includes the Barcode Scanner and Child Browser plugin Java, JavaScript and manifest configuration
+  * When completed correctly, this step will create a project in your workspace called **powerapp**
+3. Complete **Step 7** in the MDS [TMT3 Barcode Scanner Tutorial](http://www.mobiledevelopersolutions.com/home/start/twominutetutorials/tmt3)
+  * This steps adds the barcode scanner library to the PowerApp project. Errors may appear in the project until this step is completed due to the barcode scanner configuration in AndroidManifest.xml.
+  * Note: The PowerApp project *already* includes the Barcode Scanner and Child Browser plugin Java, JavaScript and manifest configuration. After complete the three steps described here the app is ready to run.
 
 ------
 
