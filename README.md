@@ -12,6 +12,7 @@ Works as a Stand-alone App or with [PhoneGap PowerApp Node.js Server](https://gi
 * **jQuery Plugins** - [jQuery Google Maps Plugin](http://code.google.com/p/jquery-ui-map/) : **Version [3.0-beta](http://code.google.com/p/jquery-ui-map/downloads/list)**,
 [jQuery Star Raty](http://wbotelhos.com/raty/), [jQuery Form Plugin](http://jquery.malsup.com/form/)
 * **OpenID Client** - [JavaScript OpenID Selector](http://code.google.com/p/openid-selector/)
+* **Extra PhoneGap Plugin** - AccountList code installed, runtime code in comments in *assets/www/main.js*
 
 ### Functionality Includes:
 
@@ -37,10 +38,13 @@ Works as a Stand-alone App or with [PhoneGap PowerApp Node.js Server](https://gi
 Instructions on installing Eclipse, Android SDK and the AppLaud Eclipse Plugin found [here](http://www.mobiledevelopersolutions.com/home/start). Recommend creating and running at least one demo app before using PowerApp, see [Getting Started Tutorial](http://www.mobiledevelopersolutions.com/home/start/twominutetutorials/tmt0). See also [AppLaud Getting Started Video](http://www.youtube.com/watch?v=mT02ytSSMII).
 
 1. Add the Barcode Scanner Plugin Project to Eclipse
-  * Complete **Steps 1** and **6** in the MDS [TMT3 Barcode Scanner Tutorial](http://www.mobiledevelopersolutions.com/home/start/twominutetutorials/tmt3)
+  * Complete **Steps 1** and **6** in the MDS [TMT3 Barcode Scanner Tutorial](http://www.mobiledevelopersolutions.com/home/start/twominutetutorials/tmt3). The PowerApp project has completed the other steps in the tutorial for you, except **Step 7** which is addressed below.
   * **Important** Use the version of the Barcode Scanner plugin for **Cordova 1.5.0+** as mention in the **Prep** step in the above tutorial. *Do not* use the version for **PhoneGap 1.4.1**.
   * The resulting project will be an **Android Library**
-2. "Import...  Existing Projects Into Workspace" in Eclipse to create project. This project may initially have errors!
+2. Download and unzip PowerApp from this page. Alternate: [Fork it](https://help.github.com/articles/fork-a-repo).
+  * Run "File > Import...  Existing Projects Into Workspace" in Eclipse to create the PowerApp project
+  * For "Selet Root Directory" browse to the location of the unzipped PowerApp project and click *Finish*
+  * *This project may have errors until you complete all steps!*
   * Set "Java Build Path" to your Android jar location
   * See the next step to include the Barcode Scanner Library in PowerApp project
 3. Complete **Step 7** in the above tutorial
