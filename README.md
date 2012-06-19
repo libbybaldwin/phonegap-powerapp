@@ -3,12 +3,12 @@
 ## PhoneGap App for Android Project (Eclipse): PowerApp
 Works as a Stand-alone App or with [PhoneGap PowerApp Node.js Server](https://github.com/libbybaldwin/phonegap-powerapp-nodejs)
 
-### The App Includes:
+### This repo contains a complete Cordova App, Including:
 
-* **PhoneGap** - [phonegap.com](phonegap.com) - currently using **PhoneGap/Cordova 1.8.0** and corresponding PhoneGap Plugins
+* **PhoneGap** - [phonegap.com](phonegap.com) - **PhoneGap/Cordova 1.8.0** .jar and .js files
 * **jQuery Mobile** - [jquerymobile.com](jquerymobile.com)
 * **Maps** - Google Maps [JavaScript API v3](https://developers.google.com/maps/documentation/javascript/reference)
-* **PhoneGap Plugins** - ChildBrowser, Barcode Scanner - from latest [PhoneGap/Cordova Plugin Repo](https://github.com/phonegap/phonegap-plugins)
+* **PhoneGap Plugins** - ChildBrowser, Barcode Scanner
 * **jQuery Plugins** - [jQuery Google Maps Plugin](http://code.google.com/p/jquery-ui-map/) : **Version [3.0-beta](http://code.google.com/p/jquery-ui-map/downloads/list)**,
 [jQuery Star Raty](http://wbotelhos.com/raty/), [jQuery Form Plugin](http://jquery.malsup.com/form/)
 * **OpenID Client** - [JavaScript OpenID Selector](http://code.google.com/p/openid-selector/)
@@ -24,17 +24,17 @@ Works as a Stand-alone App or with [PhoneGap PowerApp Node.js Server](https://gi
 
 ### Companion Node.js Server
 
-* See [PhoneGap PowerApp Node.js Server](https://github.com/libbybaldwin/phonegap-powerapp-nodejs), however *__log in not required__* to use PowerApp 
+* See [PhoneGap PowerApp Node.js Server](https://github.com/libbybaldwin/phonegap-powerapp-nodejs) to run PowerApp with server, however *__log in not required__* to use PowerApp 
 * **App Configuration** required if using server:
-  * **assets/www/index.html** - search for "Simple OpenID Selector", provide server url in form **action**
-  * **assets/www/main.js** - provide server ip and port for var **serverUrl**
+  * **assets/www/index.html** - search for "Simple OpenID Selector", provide server url in form *action*
+  * **assets/www/main.js** - provide server ip and port for var *serverUrl*
 * *Authentication* uses [OpenID](http://openid.net/)
 * *Storage of Data on Server* - Save data on server if user logs in
 * *User-controlled Data Sharing* - Data stored anonymously, sharing controlled by user
 
 ### Usage
 
-Instructions on installing Eclipse, Android SDK and the AppLaud Eclipse Plugin found [here](http://www.mobiledevelopersolutions.com/home/start). Recommend creating and running at least on demo app before using PowerApp, see [Getting Started Tutorial](http://www.mobiledevelopersolutions.com/home/start/twominutetutorials/tmt0).
+Instructions on installing Eclipse, Android SDK and the AppLaud Eclipse Plugin found [here](http://www.mobiledevelopersolutions.com/home/start). Recommend creating and running at least one demo app before using PowerApp, see [Getting Started Tutorial](http://www.mobiledevelopersolutions.com/home/start/twominutetutorials/tmt0). See also [AppLaud Getting Started Video](http://www.youtube.com/watch?v=mT02ytSSMII).
 
 1. Add the Barcode Scanner Plugin Project to Eclipse
   * Complete **Steps 1** and **6** in the MDS [TMT3 Barcode Scanner Tutorial](http://www.mobiledevelopersolutions.com/home/start/twominutetutorials/tmt3)
