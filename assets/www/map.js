@@ -111,7 +111,7 @@ $('#page-map').live("pageshow", function() {
     $('ul#item_list li[id!="li-placeholder"]').each(function(i) {
        var info; // needed HERE for each invocation
        id = $(this).attr('id');
-       scancode = id.slice(id.indexOf("item") + 1);
+       scancode = id.slice(id.indexOf("item") + 4);
        //console.log("found li id=" + id + " scancode=" + scancode); 
        
        comment = $('a#' + id + ' p span#comment').text();                
