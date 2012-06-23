@@ -7,8 +7,8 @@ I made a [short video](http://www.youtube.com/watch?v=cciO65NXCgI) which describ
 
 ### This repo contains a complete Cordova App Eclipse Project, Including:
 
-* **PhoneGap** - [phonegap.com](phonegap.com) - **PhoneGap/Cordova 1.8.0** .jar and .js files
-* **jQuery Mobile** - [jquerymobile.com](jquerymobile.com)
+* **PhoneGap** - [phonegap.com](http://phonegap.com) - **PhoneGap/Cordova 1.8.0** .jar and .js files
+* **jQuery Mobile** - [jquerymobile.com](http://jquerymobile.com)
 * **Maps** - Google Maps [JavaScript API v3](https://developers.google.com/maps/documentation/javascript/reference)
 * **PhoneGap Plugins** - ChildBrowser, Barcode Scanner
 * **jQuery Plugins** - [jQuery Google Maps Plugin](http://code.google.com/p/jquery-ui-map/) : **Version [3.0-beta](http://code.google.com/p/jquery-ui-map/downloads/list)**,
