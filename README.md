@@ -3,7 +3,7 @@
 ## PhoneGap App for Android Project (Eclipse): PowerApp
 Works as a Stand-alone App or with [PhoneGap PowerApp Node.js Server](https://github.com/libbybaldwin/phonegap-powerapp-nodejs)
 
-I made a [short](http://www.youtube.com/watch?v=cciO65NXCgI) video which describes PowerApp and how to use it.
+I made a [short video](http://www.youtube.com/watch?v=cciO65NXCgI) which describes PowerApp and how to use it.
 
 ### This repo contains a complete Cordova App Eclipse Project, Including:
 
@@ -16,7 +16,7 @@ I made a [short](http://www.youtube.com/watch?v=cciO65NXCgI) video which describ
 * **OpenID Client** - [JavaScript OpenID Selector](http://code.google.com/p/openid-selector/)
 * **Extra PhoneGap Plugin** - AccountList code installed, runtime code in comments in *assets/www/main.js*
 
-### Functionality Includes:
+### PowerApp Functionality Includes:
 
 * *Data Collection/Display* - Example uses barcode scan as "item" data
 * *Persistent Storage* - Item data saved using device local storage
