@@ -3,7 +3,9 @@
 ## PhoneGap App for Android Project (Eclipse): PowerApp
 Works as a Stand-alone App or with [PhoneGap PowerApp Node.js Server](https://github.com/libbybaldwin/phonegap-powerapp-nodejs)
 
-### This repo contains a complete Cordova App, Including:
+I made a [short](http://www.youtube.com/watch?v=cciO65NXCgI) video which describes PowerApp and how to use it.
+
+### This repo contains a complete Cordova App Eclipse Project, Including:
 
 * **PhoneGap** - [phonegap.com](phonegap.com) - **PhoneGap/Cordova 1.8.0** .jar and .js files
 * **jQuery Mobile** - [jquerymobile.com](jquerymobile.com)
@@ -21,7 +23,7 @@ Works as a Stand-alone App or with [PhoneGap PowerApp Node.js Server](https://gi
 * *Geolocation and Timestamp* - Saved with each item
 * *User Rating* - User rates with star rating and comment, saved with each item
 * *Social Aspect* - If logged in, users can share their item data anonymously and see other's data
-* *Interactive Mapping* - Items, including shared items, shown as markers on map (tap marker to see item data)
+* *Interactive Mapping* - Items, including shared items, shown as markers on map, tap marker to see info window
 
 ### Companion Node.js Server
 
@@ -40,14 +42,14 @@ Instructions on installing Eclipse, Android SDK and the AppLaud Eclipse Plugin f
 1. Add the Barcode Scanner Plugin Project to Eclipse
   * Complete **Steps 1** and **6** in the MDS [TMT3 Barcode Scanner Tutorial](http://www.mobiledevelopersolutions.com/home/start/twominutetutorials/tmt3). The PowerApp project has completed the other steps in the tutorial for you, except **Step 7** which is addressed below.
   * **Important** Use the version of the Barcode Scanner plugin for **Cordova 1.5.0+** as mention in the **Prep** step in the above tutorial. *Do not* use the version for **PhoneGap 1.4.1**.
-  * The resulting project will be an **Android Library**
+  * The resulting project will be an **Android Library** project in your Eclipse workspace
 2. Download and unzip PowerApp from this page. Alternate: [Fork it](https://help.github.com/articles/fork-a-repo).
   * Run "File > Import...  Existing Projects Into Workspace" in Eclipse to create the PowerApp project
   * For "Select Root Directory" browse to the location of the unzipped PowerApp project and click *Finish*
   * *This project may have errors until you complete all steps!*
   * When completed correctly, this step will create a project in your workspace called **powerapp**
 3. Complete **Step 7** in the MDS [TMT3 Barcode Scanner Tutorial](http://www.mobiledevelopersolutions.com/home/start/twominutetutorials/tmt3)
-  * This steps adds the barcode scanner library to the PowerApp project. Errors may appear in the project until this step is completed due to the barcode scanner configuration in AndroidManifest.xml.
+  * This step adds the barcode scanner library to the PowerApp project. Errors may appear in the project until this step is completed due to the barcode scanner configuration in AndroidManifest.xml.
   * Note: The PowerApp project *already* includes the Barcode Scanner and Child Browser plugin Java, JavaScript and manifest configuration. After complete the three steps described here the app is ready to run.
 
 ------
